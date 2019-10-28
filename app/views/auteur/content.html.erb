@@ -1,0 +1,8 @@
+<h1>GOSSIPEUR </h1>
+
+<h2><%= @user.first_name %> <%= @user.last_name %> </h2>
+
+<p>Age : <%= @user.age %></p>
+<p>email : <%= @user.email %></p>
+<p>City : <%= @city.find(@user.city_id).name %></p>
+<p>Description : <%= @user.description %></p>

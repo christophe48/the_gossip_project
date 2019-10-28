@@ -1,0 +1,14 @@
+<h1>GOSSIP TIME! </h1>
+
+<h2>Titre : <%= @gossip.find(params[:id]).title %> </h2>
+
+<h3>Ecrit par:
+  <% g = @gossip.find(params[:id]) %> <% h = g.user_id %>
+  <!-- je créer mon liens vers la page de l'autre sur le nom et prénom -->
+ <%= link_to "#{@user.find(h).first_name} #{@user.find(h).last_name}", auteurs_path(h) %>
+</h3>
+
+<p> le : <%=@gossip.find(params[:id]).created_at %> <br/>
+dernière modification: <%=@gossip.find(params[:id]).updated_at %> </p>
+
+<p> <%= @gossip.find(params[:id]).content %> </p>
