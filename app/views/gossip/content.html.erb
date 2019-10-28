@@ -8,7 +8,7 @@
  <%= link_to "#{@user.find(h).first_name} #{@user.find(h).last_name}", auteurs_path(h) %>
 </h3>
 
-<p> le : <%=@gossip.find(params[:id]).created_at %> <br/>
-dernière modification: <%=@gossip.find(params[:id]).updated_at %> </p>
+<p> le : <%=@gossip.find(params[:id]).created_at.strftime("%d/%m/%Y") %> <br/>
+dernière modification: <%=@gossip.find(params[:id]).updated_at.strftime("%d/%m/%Y") %> </p>
 
 <p> <%= @gossip.find(params[:id]).content %> </p>
