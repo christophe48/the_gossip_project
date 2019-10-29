@@ -2,9 +2,7 @@
 La page d'acceuil est http://localhost:3000/home
 Si tu veux tester le site n'oublie pas de faire:
 
-$ bundle install
-
-$ rails db:seed (pour générer une fausse base de donnée)
+# $ rails db:setup
 
 Projet : The Gossip Project, les premières views
 

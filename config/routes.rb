@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'auteurs/content'
   #je crée mes routes (mes liens urls), to: j'apelle mes méthodes (donc mes pages view.)
   get '/', to: 'homes#index', as: 'homes'
   get 'welcomes/:first_name', to: 'welcomes#user'
