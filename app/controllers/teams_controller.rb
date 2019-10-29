@@ -1,4 +1,4 @@
-class TeamController < ApplicationController
+class TeamsController < ApplicationController
   #je crée mes controllers et ma page home
   def home
   end

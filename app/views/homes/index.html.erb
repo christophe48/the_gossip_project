@@ -1,8 +1,7 @@
 <h1>BIENVENUE SUR NOTRE SITE INTERNET</h1>
-<p>Pour le moment nous avons créer que deux pages:
-  <br/>
+<p>
 Si tu veux voir notre page de bienvenue n'hésite pas à mettre dans l'URL:
-<a href="http://localhost:3000/welcome/le_nom_que_tu_veux" > http://localhost:3000/welcome/le_nom_que_tu_veux </a>
+<a href="http://localhost:3000/welcomes/le_nom_que_tu_veux" > http://localhost:3000/welcomes/le_nom_que_tu_veux </a>
 <br/>
 <br/>
 </p>
@@ -13,8 +12,9 @@ Si tu veux voir notre page de bienvenue n'hésite pas à mettre dans l'URL:
  <div class="card" style="width: 18rem; text-align:center;">
    <img class="card-img-top" src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts113/v4/dc/27/a1/dc27a1eb-2307-fe47-342e-6fb84618f5a8/mza_8792713575073991728.jpg/600x600bb.jpg" alt="Card image cap">
    <div class="card-body">
-     <a href="http://localhost:3000/gossip/<%=index.id%>" class="btn btn-primary"> <%= index.title %> </a>
+     <p class="card-text"> <%= index.title %> </p>
      <p class="card-text"><%  a = index.user_id %> Gossipeur : <%= @user.find(a).first_name %></p>
+     <a href="http://localhost:3000/gossips/<%=index.id%>" class="btn btn-primary"> SEE THIS GOSSIP! </a>
    </div>
  </div>
  <br>

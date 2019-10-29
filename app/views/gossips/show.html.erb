@@ -5,7 +5,7 @@
 <h3>Ecrit par:
   <% g = @gossip.find(params[:id]) %> <% h = g.user_id %>
   <!-- je créer mon liens vers la page de l'autre sur le nom et prénom -->
- <%= link_to "#{@user.find(h).first_name} #{@user.find(h).last_name}", auteurs_path(h) %>
+ <%= link_to "#{@user.find(h).first_name} #{@user.find(h).last_name}", auteur_path(h) %>
 </h3>
 
 <p> le : <%=@gossip.find(params[:id]).created_at.strftime("%d/%m/%Y") %> <br/>

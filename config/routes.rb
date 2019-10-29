@@ -1,24 +1,25 @@
 Rails.application.routes.draw do
-  get 'auteur/content'
+  get 'auteurs/content'
   #je crée mes routes (mes liens urls), to: j'apelle mes méthodes (donc mes pages view.)
-  get 'home', to: 'home#index'
-  get 'welcome/:first_name', to: 'welcome#user'
+  get '/', to: 'homes#index', as: 'homes'
+  get 'welcomes/:first_name', to: 'welcomes#user'
 
   #je crée mes routes dynamique pour mes models gossips
-  get 'gossip/:id', to: 'gossip#content'
+  resources :gossips #cette commande me permet de créer les 7 relations avec le REST vu dans le cour de mardi
+
 
   #je crée mes routes dynamique pour mes auteurs
-  get 'gossip/auteur/:id', to: "auteur#content", as: "auteurs"
+  resources :auteurs
 
   #mes routes page contacts
-  get 'contact', to: 'contact#contactus'
-  get 'contact/christophe', to: 'contact#contact_christophe'
-  get 'contact/lucas', to: 'contact#contact_lucas'
+  get 'contacts', to: 'contacts#contactus'
+  get 'contacts/christophe', to: 'contacts#contact_christophe'
+  get 'contacts/lucas', to: 'contacts#contact_lucas'
 
   #mes routes page team
-  get 'team', to: 'team#home'
-  get 'team/christophe', to: 'team#christophe'
-  get 'team/lucas', to: 'team#lucas'
+  get 'teams', to: 'teams#home'
+  get 'teams/christophe', to: 'teams#christophe'
+  get 'teams/lucas', to: 'teams#lucas'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,12 +1,12 @@
-class ContactController < ApplicationController
+class ContactsController < ApplicationController
   #je crée mon controller contact et ma page contactus
   def contactus
   end
 
 #je crée mes liens dans mon controller
-  def contact_christophe
+  def contacts_christophe
   end
 
-  def contact_lucas
+  def contacts_lucas
   end
 end
