@@ -4,5 +4,5 @@
 
 <p>Age : <%= @user.age %></p>
 <p>email : <%= @user.email %></p>
-<p>City : <%= @cities.find(@user.city_id).name %></p>
+<p>City : <%= link_to "#{@cities.find(@user.city_id).name}", city_path(@user.city_id) %></p>
 <p>Description : <%= @user.description %></p>

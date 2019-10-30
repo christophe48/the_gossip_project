@@ -9,7 +9,7 @@
 
 <p> le : <%=@gossip.created_at.strftime("%d/%m/%Y") %> <br/>
 dernière modification: <%=@gossip.updated_at.strftime("%d/%m/%Y") %> <br/>
-dans la ville : <%=link_to "#{@cities.find(@users.find(@gossip.user_id).city_id).name}", city_path(@users.find(@gossip.user_id)) %>
+dans la ville : <%=link_to "#{@cities.find(@users.find(@gossip.user_id).city_id).name}", city_path(@users.find(@gossip.user_id).city_id) %>
 </p>
 
 
