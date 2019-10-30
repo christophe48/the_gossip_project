@@ -14,7 +14,6 @@ end
 
  def new
    # Méthode qui crée un potin vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
-   @gossips = Gossip.all
  end
 
  def create
@@ -32,14 +31,15 @@ end
 
  def edit
    # Méthode qui récupère le potin concerné et l'envoie à la view edit (edit.html.erb) pour affichage dans un formulaire d'édition
-   @gossip = Gossip.all
  end
 
  def update
-   # Méthode qui met à jour le potin à partir du contenu du formulaire de edit.html.erb, soumis par l'utilisateur
-   # pour info, le contenu de ce formulaire sera accessible dans le hash params
-   # Une fois la modification faite, on redirige généralement vers la méthode show (pour afficher le potin modifié)
-   @gossip = Gossip.all
+   @model = Model.find(params[:id])
+   if @model.update(tes_params)
+     redirect_to @model
+   else
+     render :edit
+   end
  end
 
  def destroy
