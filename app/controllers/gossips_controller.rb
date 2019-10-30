@@ -44,8 +44,12 @@ end
  end
 
  def destroy
-   # Méthode qui récupère le potin concerné et le détruit en base
-   # Une fois la suppression faite, on redirige généralement vers la méthode index (pour afficher la liste à jour)
-   @gossip = Gossip.all
+   @gossip = Gossip.find(params[:id])
+  if @gossip.destroy
+    redirect_to gossips_path
+  else
+    render :show
+  end
  end
+
 end
