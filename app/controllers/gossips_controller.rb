@@ -1,19 +1,19 @@
 class GossipsController < ApplicationController
  def index
    # Méthode qui récupère tous les potins et les envoie à la view index (index.html.erb) pour affichage
-   @gossip = Gossip.all
-   @user = User.all
+   @gossips = Gossip.all
+   @users = User.all
  end
 
  def show
    # Méthode qui récupère le potin concerné et l'envoie à la view show (show.html.erb) pour affichage
-   @gossip = Gossip.all
-   @user = User.all
+   @gossip = Gossip.find(params[:id])
+   @users = User.all
 end
 
  def new
    # Méthode qui crée un potin vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
-   @gossip = Gossip.all
+   @gossips = Gossip.all
  end
 
  def create
@@ -23,9 +23,9 @@ end
    @gossip = Gossip.new(user_id: 2, title: params[:title], content: params[:content])
 
    if @gossip.save
-     redirect_to homes_path
+     redirect_to gossips_path
    else
-     render 'gossips/new'
+     render 'gossips/show'
    end
  end
 
@@ -45,5 +45,11 @@ end
    # Méthode qui récupère le potin concerné et le détruit en base
    # Une fois la suppression faite, on redirige généralement vers la méthode index (pour afficher la liste à jour)
    @gossip = Gossip.all
+ end
+
+private
+
+ def gossips_params
+
  end
 end

@@ -1,0 +1,17 @@
+<h1> La liste des Gossips! </h1>
+
+
+<!-- je récupère mes author et titre de chaque gossips. -->
+<% @gossips.each do |index| %>
+<center>
+<div class="card" style="width: 18rem; text-align:center;">
+  <img class="card-img-top" src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts113/v4/dc/27/a1/dc27a1eb-2307-fe47-342e-6fb84618f5a8/mza_8792713575073991728.jpg/600x600bb.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text"> <%= index.title %> </p>
+    <p class="card-text"><%  a = index.user_id %> Gossipeur : <%= @users.find(a).first_name %></p>
+    <a href="http://localhost:3000/gossips/<%=index.id%>" class="btn btn-primary"> SEE THIS GOSSIP! </a>
+  </div>
+</div>
+<br>
+</center>
+<% end %>

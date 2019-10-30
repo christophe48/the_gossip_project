@@ -1,17 +1,19 @@
 class AuteursController < ApplicationController
   def index
     # Méthode qui récupère tous les auteurs et les envoie à la view index (index.html.erb) pour affichage
+    @users = User.all
+    @cities = City.all
   end
 
   def show
     # Méthode qui récupère l'auteur concerné et l'envoie à la view show (show.html.erb) pour affichage
     @user = User.find(params[:id])
-    @city = City.all
+    @cities = City.all
  end
 
   def new
     # Méthode qui crée un auteur vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
-    @user = User.all
+    @users = User.all
   end
 
   def create
