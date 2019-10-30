@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   #je crée mes routes dynamique pour mes auteurs
   resources :auteurs
 
+  #je crée mes routes dynamique pour mes cities
+  resources :cities
+  
   #mes routes page contacts
   get 'contacts', to: 'contacts#contactus'
   get 'contacts/christophe', to: 'contacts#contact_christophe'

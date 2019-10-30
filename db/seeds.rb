@@ -29,7 +29,7 @@ end
 end
 
 #dans ma 3eme boucle et 4eme boucle je créé juste un nombre différent de gossip et tag
-20.times do |index|
+100.times do |index|
 	g << Gossip.create(title: Faker::Book.title, content: Faker::Lorem.sentence(word_count: 20), user: u.sample, created_at: Faker::Date.between(from: 300.days.ago, to: 150.days.ago), updated_at: Faker::Date.between(from: 149.days.ago, to: Date.today))
 	puts "Gossip : #{Faker::Book.title}"
 end
