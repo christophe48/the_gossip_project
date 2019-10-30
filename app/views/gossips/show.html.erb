@@ -14,3 +14,7 @@ dans la ville : <%=link_to "#{@cities.find(@users.find(@gossip.user_id).city_id)
 
 
 <p> <%= @gossip.content %> </p>
+
+
+<p> <a href="http://localhost:3000/gossips/<%=@gossip.id%>/edit" class="btn btn-primary"> Edit </a> </p>
+<p> <a href="http://localhost:3000/gossips/<%=@gossip.id%>/destroy" class="btn btn-primary"> Supprimer </a> </p>

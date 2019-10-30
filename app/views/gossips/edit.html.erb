@@ -1,2 +1,19 @@
-<h1>Gossips#edit</h1>
-<p>Find me in app/views/gossips/edit.html.erb</p>
+
+    <!-- ... -->
+<br><br><br>
+
+<center>
+    <%= form_tag url_for(action:'update'), method: "patch" do %>
+
+      <%= label_tag 'Title' %><br>
+      <%= text_field_tag 'title'  %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %><br>
+      <%= text_area_tag 'content' %>
+      <br /> <br />
+
+      <%= submit_tag "Edit Post" %>
+    <% end %>
+
+</center>

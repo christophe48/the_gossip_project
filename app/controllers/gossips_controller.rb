@@ -31,12 +31,13 @@ end
 
  def edit
    # Méthode qui récupère le potin concerné et l'envoie à la view edit (edit.html.erb) pour affichage dans un formulaire d'édition
+   @gossip = Gossip.find(params[:id])
  end
 
  def update
-   @model = Model.find(params[:id])
-   if @model.update(tes_params)
-     redirect_to @model
+   @gossip = Gossip.find(params[:id])
+   if @gossip.update(title: params[:title], content: params[:content])
+     redirect_to gossips_path
    else
      render :edit
    end
@@ -46,11 +47,5 @@ end
    # Méthode qui récupère le potin concerné et le détruit en base
    # Une fois la suppression faite, on redirige généralement vers la méthode index (pour afficher la liste à jour)
    @gossip = Gossip.all
- end
-
-private
-
- def gossips_params
-
  end
 end
